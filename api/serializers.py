@@ -3,6 +3,9 @@ from .models import *
 from django.contrib.auth.models import User
 
 class ProductSerializer(serializers.ModelSerializer):
+    colors = serializers.StringRelatedField(many=True)
+    images = serializers.StringRelatedField(many=True)
+    sizes = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Product

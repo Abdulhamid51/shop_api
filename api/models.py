@@ -80,6 +80,9 @@ class Sizes(models.Model):
 class Images(models.Model):
     image = models.ImageField("rasmi", upload_to='product_images')
 
+    def __str__(self):
+        return self.image.url
+
 # Product 
 class Product(models.Model):
     images = models.ManyToManyField("api.Images")
